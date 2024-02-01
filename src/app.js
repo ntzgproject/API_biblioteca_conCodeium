@@ -22,7 +22,7 @@ const librosRouter = require("./routes/libros");
 
 //Configuramos el middleware de autenticacion
 app.use("/api/libros", autenticacion,  librosRouter);
-
+app.use("/api/usuarios", autenticacion,  require("./routes/usuarios"));
 app.use(errorHandler);
 
 app.listen(3000, () => {
